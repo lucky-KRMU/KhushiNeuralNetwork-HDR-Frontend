@@ -2,7 +2,13 @@ import react, { useRef, useState, useEffect } from "react";
 import { FaHandPointDown, FaPen } from "react-icons/fa";
 
 
-function DigitCanvas() {
+
+
+export default function Playground() {
+    const [prediction, setPrediction] = useState(false);
+    const [predictedDigit, setPredictedDigit] = useState(null);
+
+    function DigitCanvas() {
     const canvasRef = useRef(null);
     const [isDrawing, setIsDrawing] = useState(false);
     const [pixelArray, setPixelArray] = useState(new Array(28 * 28).fill(0));
@@ -110,6 +116,10 @@ function DigitCanvas() {
         setPixelArray(new Array(GRID_SIZE * GRID_SIZE).fill(0));
     };
 
+    const predictDigit = () => {
+
+    }
+
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', fontFamily: 'sans-serif' }}>
             <canvas
@@ -127,7 +137,7 @@ function DigitCanvas() {
                 <button onClick={clearCanvas} className="px-3 py-2 rounded-2xl bg-pink-600 text-xl font-[Inter] text-white cursor-pointer font-semibold duration-100">
                     Clear Canvas
                 </button>
-                <button onClick={clearCanvas} className="px-3 py-2 rounded-2xl bg-pink-600 text-xl font-[Inter] text-white cursor-pointer font-semibold duration-100">
+                <button onClick={predictDigit} className="px-3 py-2 rounded-2xl bg-pink-600 text-xl font-[Inter] text-white cursor-pointer font-semibold duration-100">
                     Predict Digit
                 </button>
             </div>
@@ -135,9 +145,8 @@ function DigitCanvas() {
 
         </div>
     );
-}
+    }
 
-export default function Playground() {
     return (
         <>
             <main className="h-[90vh] md:h-[85vh] w-full font-[Inter] flex items-center justify-center flex-col gap-2 bg-pink-50">
@@ -146,7 +155,12 @@ export default function Playground() {
                 <h1 className="flex items-center justify-center gap-2 text-3xl">Draw Digit in Canvas <FaPen /></h1>
                 <FaHandPointDown className="text-3xl" />
                 <DigitCanvas />
-                <h1>Prediction: </h1>
+                {
+                    prediction ?
+                    <h1>Prediction: {predictedDigit} </h1>
+                    : <p></p>
+
+                }
             </main>
         </>
     );
