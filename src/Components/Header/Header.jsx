@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { motion } from 'framer-motion';
+import { MdOutlineStarPurple500 } from "react-icons/md";
 
 const ExpandableWord = ({ short, long }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -16,17 +17,17 @@ const ExpandableWord = ({ short, long }) => {
         cursor: 'pointer',
         overflow: 'hidden',       // Clips text during transition
         whiteSpace: 'nowrap',     // Prevents text wrapping
-        backgroundColor: '#f3f4f6', 
+        backgroundColor: '#e6e6fa', 
         padding: '2px 8px',
         borderRadius: '4px',
-        color: '#1d4ed8',
-        fontWeight: '600'
+        color: 'purple',
+        fontWeight: '600',
+        fontFamily: 'Inter'
       }}
     >
-      {/* The main short word (e.g., OTT) */}
       <motion.span layout="position">{short}</motion.span>
 
-      {/* The expanded portion that fades & widens into view */}
+      
       <motion.span
         layout
         initial={{ width: 0, opacity: 0 }}
@@ -36,8 +37,8 @@ const ExpandableWord = ({ short, long }) => {
         }}
         transition={{ duration: 0.25, ease: "easeInOut" }}
         style={{
-          color: '#4b5563',
-          fontWeight: '400',
+          color: '#ff6ec7',
+          fontWeight: '700',
           fontSize: '0.95em'
         }}
       >
@@ -51,10 +52,10 @@ function Header() {
 
   return (
     <>
-    <header className='h-18 w-full bg-red-100 font-[Inter] font-bold flex items-center justify-center'>
-    <div className='text-center text-4xl text-fuchsia-400 cursor-pointer flex gap-1.5'>
+    <header className='h-18 md:h-[15vh] w-full bg-pink-100 font-[Inter] font-bold flex items-center justify-center'>
+    <div className='text-center text-4xl text-fuchsia-400 cursor-pointer flex gap-1.5 items-center justify-center'>
         <ExpandableWord short={'KNN'} long={'Khushi Neural Network'} />
-        -
+        <MdOutlineStarPurple500 className='hover:text-5xl duration-200' />
         <ExpandableWord short={'HDR'} long={'Handwritten Digit Recognizer'} />
     </div>
     </header>
