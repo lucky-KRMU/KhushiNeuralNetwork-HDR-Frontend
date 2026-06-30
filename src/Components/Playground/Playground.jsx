@@ -4,6 +4,7 @@ import { FaHandPointDown, FaPen } from "react-icons/fa";
 export default function Playground() {
     const [prediction, setPrediction] = useState(false);
     const [predictedDigit, setPredictedDigit] = useState(null);
+    const [loading, setLoading] = useState(false)
 
     const canvasRef = useRef(null);
     const [isDrawing, setIsDrawing] = useState(false);
@@ -120,6 +121,7 @@ export default function Playground() {
     };
 
     const predictDigit = async (pixelArray) => {
+        setLoading(true)
         try {
             const response = await fetch('https://khushineuralnetwork-hdr-backend.onrender.com/predict', {
                 method: 'POST',
@@ -140,6 +142,7 @@ export default function Playground() {
         } catch (err) {
             console.error("Error fetching prediction from server:", err);
         }
+        setLoading(false)
     };
 
     return (
@@ -167,6 +170,11 @@ export default function Playground() {
                         </button>
                     </div>
                 </div>
+                {
+                    loading ?
+                    <p className="text-white text-l animate-pulse">Loading...</p>
+                    : <p></p>
+                }
                 {
                     prediction ?
                     <h1 className="text-xl text-white font-[Inter]">Prediction: {predictedDigit} </h1>
