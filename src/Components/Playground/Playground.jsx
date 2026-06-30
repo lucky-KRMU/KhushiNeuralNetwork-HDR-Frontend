@@ -169,7 +169,7 @@ export default function Playground() {
                 </div>
                 {
                     prediction ?
-                    <h1>Prediction: {predictedDigit} </h1>
+                    <h1 className="text-xl text-white font-[Inter]">Prediction: {predictedDigit} </h1>
                     : <p></p>
                 }
             </main>
