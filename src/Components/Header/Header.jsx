@@ -17,10 +17,10 @@ const ExpandableWord = ({ short, long }) => {
         cursor: 'pointer',
         overflow: 'hidden',       // Clips text during transition
         whiteSpace: 'nowrap',     // Prevents text wrapping
-        backgroundColor: '#e6e6fa', 
+        backgroundColor: '#aa5afa', 
         padding: '2px 8px',
         borderRadius: '4px',
-        color: 'purple',
+        // color: 'pink',
         fontWeight: '600',
         fontFamily: 'Inter'
       }}
@@ -37,7 +37,7 @@ const ExpandableWord = ({ short, long }) => {
         }}
         transition={{ duration: 0.25, ease: "easeInOut" }}
         style={{
-          color: '#ff6ec7',
+          color: 'white',
           fontWeight: '700',
           fontSize: '0.95em'
         }}
@@ -52,10 +52,10 @@ function Header() {
 
   return (
     <>
-    <header className='h-[10vh] md:h-[15vh] w-full bg-pink-100 font-[Inter] font-bold flex items-center justify-center'>
-    <div className='text-center text-4xl text-fuchsia-400 cursor-pointer flex gap-1.5 items-center justify-center'>
+    <header className='h-[10vh] md:h-[15vh] w-full bg-pink-600 font-[Inter] font-bold flex items-center justify-center'>
+    <div className='text-center text-4xl text-fuchsia-800 cursor-pointer flex gap-1.5 items-center justify-center'>
         <ExpandableWord short={'KNN'} long={'Khushi Neural Network'} />
-        <MdOutlineStarPurple500 className='hover:text-5xl duration-200' />
+        <MdOutlineStarPurple500 className='hover:text-5xl duration-200 text-fuchsia-400' />
         <ExpandableWord short={'HDR'} long={'Handwritten Digit Recognizer'} />
     </div>
     </header>

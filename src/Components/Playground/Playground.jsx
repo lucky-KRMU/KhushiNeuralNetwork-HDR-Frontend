@@ -144,9 +144,9 @@ export default function Playground() {
 
     return (
         <>
-            <main className="h-[90vh] md:h-[85vh] w-full font-[Inter] flex items-center justify-center flex-col gap-2 bg-pink-50">
-                <h1 className="flex items-center justify-center gap-2 text-3xl">Draw Digit in Canvas <FaPen /></h1>
-                <FaHandPointDown className="text-3xl" />
+            <main className="h-[90vh] md:h-[85vh] w-full font-[Inter] flex items-center justify-center flex-col gap-2 bg-zinc-950 ">
+                <h1 className="flex items-center justify-center gap-2 text-3xl text-white font-semibold cursor-pointer">Draw Digit in Canvas <FaPen /></h1>
+                <FaHandPointDown className="text-3xl text-pink-600" />
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', fontFamily: 'sans-serif' }}>
                     <canvas
                         ref={canvasRef}
@@ -156,7 +156,7 @@ export default function Playground() {
                         onMouseMove={draw}
                         onMouseUp={() => setIsDrawing(false)}
                         onMouseLeave={() => setIsDrawing(false)}
-                        style={{ border: '2px solid #555', cursor: 'crosshair', borderRadius: '4px' }}
+                        style={{ border: '5px double #DB2777', cursor: 'crosshair', borderRadius: '4px' }}
                     />
                     <div className="flex-col md:flex-row flex items-center justify-center gap-3">
                         <button onClick={clearCanvas} className="px-3 py-2 rounded-2xl bg-pink-600 text-xl font-[Inter] text-white cursor-pointer font-semibold duration-100">
@@ -175,4 +175,4 @@ export default function Playground() {
             </main>
         </>
     );
-}
+}
