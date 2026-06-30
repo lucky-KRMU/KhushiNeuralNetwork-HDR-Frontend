@@ -52,7 +52,7 @@ function Header() {
 
   return (
     <>
-    <header className='h-18 md:h-[15vh] w-full bg-pink-100 font-[Inter] font-bold flex items-center justify-center'>
+    <header className='h-[10vh] md:h-[15vh] w-full bg-pink-100 font-[Inter] font-bold flex items-center justify-center'>
     <div className='text-center text-4xl text-fuchsia-400 cursor-pointer flex gap-1.5 items-center justify-center'>
         <ExpandableWord short={'KNN'} long={'Khushi Neural Network'} />
         <MdOutlineStarPurple500 className='hover:text-5xl duration-200' />
