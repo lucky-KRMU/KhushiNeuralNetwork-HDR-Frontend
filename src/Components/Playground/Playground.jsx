@@ -122,16 +122,11 @@ function DigitCanvas() {
         style={{ border: '2px solid #555', cursor: 'crosshair', borderRadius: '4px' }}
       />
       
-      <button onClick={clearCanvas} style={{ padding: '8px 16px', cursor: 'pointer' }}>
+      <button onClick={clearCanvas} className="px-3 py-2 rounded-2xl bg-pink-600 text-xl font-[Inter] text-white cursor-pointer hover:font-semibold duration-100">
         Clear Canvas
       </button>
 
-      <div>
-        <h4>Array Status (First 28 values representing row 1):</h4>
-        <div style={{ maxWidth: '400px', wordBreak: 'break-all', fontSize: '12px', background: '#f0f0f0', padding: '10px' }}>
-          {JSON.stringify(pixelArray.slice(0, 28).map(v => v.toFixed(2)))}...
-        </div>
-      </div>
+      
     </div>
   );
 }
@@ -139,7 +134,7 @@ function DigitCanvas() {
 export default function Playground () {
     return(
         <>
-        <main className="h-[90vh] md:h-[85vh] w-full font-[Inter] flex items-center justify-center flex-col bg-pink-50">
+        <main className="h-[90vh] md:h-[85vh] w-full font-[Inter] flex items-center justify-center flex-col gap-2 bg-pink-50">
 
         
         <h1 className="flex items-center justify-center gap-2 text-3xl">Draw Digit in Canvas <FaPen /></h1>
