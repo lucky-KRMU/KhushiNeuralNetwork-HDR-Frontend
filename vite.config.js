@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: 'KhushiNeuralNetwork-HDR-Frontend'
+  base: '/KhushiNeuralNetwork-HDR-Frontend/'
 })
